@@ -5,7 +5,7 @@ const { t } = fieldDecoratorKit;
 fieldDecoratorKit.setDomainList(['api.exchangerate-api.com','token.yishangcloud.cn','open.feishu.cn','pay.xunkecloud.cn']);
 
 fieldDecoratorKit.setDecorator({
-  name: 'AI 视频(Sora2)',
+  name: 'AI 视频(Veo3)',
   // 定义捷径的i18n语言资源
   i18nMap: {
     'zh-CN': {
@@ -33,7 +33,7 @@ fieldDecoratorKit.setDecorator({
   authorizations: 
     {
       id: 'auth_id',// 授权的id，用于context.fetch第三个参数指定使用
-      platform: 'xunkecloud',// 授权平台，目前可以填写当前平台名称
+      platform: 'yishangcloud',// 授权平台，目前可以填写当前平台名称
       type: AuthorizationType.HeaderBearerToken, // 授权类型
       required: true,// 设置为选填，用户如果填了授权信息，请求中则会携带授权信息，否则不带授权信息
       instructionsUrl: "https://token.yishangcloud.cn/",// 帮助链接，告诉使用者如何填写这个apikey
@@ -51,16 +51,20 @@ fieldDecoratorKit.setDecorator({
       label: t('videoMethod'),
       component: FormItemComponent.SingleSelect,
       props: {
-        defaultValue: 'sora-2',
+        defaultValue: 'veo3.1',
         placeholder: '请选择模型',
         options: [
           {
-            key: 'sora-2',
-            title: 'sora-2',
+            key: 'veo3.1',
+            title: 'veo3.1',
           },
           {
-            key: 'sora-2-hd',
-            title: 'sora-2-hd',
+            key: 'veo3.1-pro',
+            title: 'veo3.1-pro',
+          },
+          {
+            key: 'veo3',
+            title: 'veo3',
           },
         ]
       },
@@ -211,7 +215,7 @@ fieldDecoratorKit.setDecorator({
 
       // 将refImage转换为字符串
       const refImageString = refImage && refImage.length > 0 ? refImage.map(item => item.tmp_url).join(',') : '';
-      const apiUrl = 'https://open.feishu.cn/anycross/trigger/callback/NmZlMjIxNzEzY2VmODk2NjAxMTJjMzVhZjBlODJlMzkw';
+      const apiUrl = 'https://open.feishu.cn/anycross/trigger/callback/ZDA1ZDYwMmE4Y2JhMjQ0NDRiZGJjNTNhODY4MzU4YWMw';
 
       
       // 调用前等待60秒

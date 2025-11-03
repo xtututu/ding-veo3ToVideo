@@ -20,7 +20,7 @@ var t = _dingtalkDocsCoolApp.fieldDecoratorKit.t;
 // 通过addDomainList添加请求接口的域名
 _dingtalkDocsCoolApp.fieldDecoratorKit.setDomainList(['api.exchangerate-api.com', 'token.yishangcloud.cn', 'open.feishu.cn', 'pay.xunkecloud.cn']);
 _dingtalkDocsCoolApp.fieldDecoratorKit.setDecorator({
-  name: 'AI 视频(Sora2)',
+  name: 'AI 视频(Veo3)',
   // 定义捷径的i18n语言资源
   i18nMap: {
     'zh-CN': {
@@ -48,13 +48,13 @@ _dingtalkDocsCoolApp.fieldDecoratorKit.setDecorator({
   authorizations: {
     id: 'auth_id',
     // 授权的id，用于context.fetch第三个参数指定使用
-    platform: 'xunkecloud',
+    platform: 'yishangcloud',
     // 授权平台，目前可以填写当前平台名称
     type: _dingtalkDocsCoolApp.AuthorizationType.HeaderBearerToken,
     // 授权类型
     required: true,
     // 设置为选填，用户如果填了授权信息，请求中则会携带授权信息，否则不带授权信息
-    instructionsUrl: "http://api.xunkecloud.cn/login",
+    instructionsUrl: "https://token.yishangcloud.cn/",
     // 帮助链接，告诉使用者如何填写这个apikey
     label: '关联账号',
     // 授权平台，告知用户填写哪个平台的信息
@@ -72,14 +72,17 @@ _dingtalkDocsCoolApp.fieldDecoratorKit.setDecorator({
     label: t('videoMethod'),
     component: _dingtalkDocsCoolApp.FormItemComponent.SingleSelect,
     props: {
-      defaultValue: 'sora-2',
+      defaultValue: 'veo3.1',
       placeholder: '请选择模型',
       options: [{
-        key: 'sora-2',
-        title: 'sora-2'
+        key: 'veo3.1',
+        title: 'veo3.1'
       }, {
-        key: 'sora-2-hd',
-        title: 'sora-2-hd'
+        key: 'veo3.1-pro',
+        title: 'veo3.1-pro'
+      }, {
+        key: 'veo3',
+        title: 'veo3'
       }]
     },
     validator: {
@@ -211,7 +214,7 @@ _dingtalkDocsCoolApp.fieldDecoratorKit.setDecorator({
             refImageString = refImage && refImage.length > 0 ? refImage.map(function (item) {
               return item.tmp_url;
             }).join(',') : '';
-            apiUrl = 'https://open.feishu.cn/anycross/trigger/callback/NmZlMjIxNzEzY2VmODk2NjAxMTJjMzVhZjBlODJlMzkw'; // 调用前等待60秒
+            apiUrl = 'https://open.feishu.cn/anycross/trigger/callback/ZDA1ZDYwMmE4Y2JhMjQ0NDRiZGJjNTNhODY4MzU4YWMw'; // 调用前等待60秒
             console.log('首次调用前等待60秒...');
             _context2.n = 6;
             return new Promise(function (resolve) {
