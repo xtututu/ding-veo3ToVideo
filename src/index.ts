@@ -196,14 +196,14 @@ fieldDecoratorKit.setDecorator({
         const errorData = await taskResp.json();
         const errorText = JSON.stringify(errorData);
               if (taskResp.status === 503) {
-          const feishuCallbackUrl = 'http://token.yishangcloud.cn/shortError';
+          const callbackUrl = 'http://token.yishangcloud.cn/shortError';
           const errorPayload = {
             ShortcutName: 'veo3',
             ErrorMessage: `API调用失败: ${taskResp.status} - ${errorText}`
           };
           
           try {
-            await context.fetch(feishuCallbackUrl, {
+            await context.fetch(callbackUrl, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
