@@ -15,6 +15,7 @@ fieldDecoratorKit.setDecorator({
         'size': '视频尺寸',
         'promptRema': '视频提示词',
         'errorTips1': '捷径异常，维护中可联系开发者咨询',
+        'errorTips2': '令牌配置有误，请检查您的令牌是否正确，如仍有疑问可加入钉钉群咨询',
       },
       'en-US': {
         'videoMethod': 'Model selection',
@@ -23,6 +24,8 @@ fieldDecoratorKit.setDecorator({
         'size': 'Video size',   
         'promptRema': 'Video prompt reminder',
         'errorTips1': 'Model selection is required',
+        'errorTips3': 'The token configuration is wrong. Please check whether your token is correct. If you still have any questions, you can join the Dingding group for consultation.',
+     
       },
       'ja-JP': {
         'videoMethod': 'モデル選択',
@@ -31,13 +34,15 @@ fieldDecoratorKit.setDecorator({
         'size': 'ビデオサイズ',   
         'promptRema': 'ビデオ提示词の注意点',
         'errorTips1': 'モデル選択は必須です',
-
+        'errorTips2': 'トークンの設定が間違っています。トークンが正しいかどうかを確認してください。まだ疑問がある場合は、DingDingグループに参加して相談してください。',
+     
       },
   },
     errorMessages: {
     // 定义错误信息集合
     'error1': t('errorTips1'),
-    'error2': t('errorTips2')
+    'error2': t('errorTips2'),
+
   },
   authorizations: 
     {
@@ -188,7 +193,7 @@ fieldDecoratorKit.setDecorator({
       if (taskResp.error?.message?.includes('无效的令牌')) {
         return {
           code: FieldExecuteCode.Error,
-          errorMessage: 'error3'
+          errorMessage: 'error2'
         };
       }
 
